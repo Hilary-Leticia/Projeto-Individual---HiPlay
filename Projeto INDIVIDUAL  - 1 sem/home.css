@@ -1,0 +1,97 @@
+body {
+    margin: 0px;
+}
+
+header {
+    background-image: linear-gradient( to right, white, rgb(252, 61, 93), red );
+    height: 70px;
+    display: flex;
+}
+
+header .referencias {
+    margin-left: 600px;
+    color:black;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    list-style: none;
+    margin-top: 10px;
+}
+
+header img {
+    margin-top: 0px;
+    width: 170px;
+    height: 70px;
+}
+
+main {
+   display: flex;
+   background-image: url(fundo2.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   opacity: 0.7;
+   height: 1000px;
+}
+
+main .banner {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 63vh;
+    margin-top: 90px;
+    animation: slide 10s infinite;
+    animation-duration: alternate;
+    border-bottom: 5px solid rgb(255, 255, 255);
+    background-size: cover;
+}
+
+@keyframes slide {
+
+    0%,
+    30% {
+        background-image: url(img-site/banner-5.png);
+    }
+
+    35%,
+    65% {
+        background-image: url(img-site/banner-paint-2-canva.png);
+    }
+
+    70%,
+    100% {
+        background-image: url(img-site/covid_vacines_banner-canva.png);
+    }
+
+}
+
+
+
+main .noticias1 {
+    color:black;
+    height: 80px;
+    width: 50px;
+    font-size: 30px;
+    flex-direction: row;
+}
+
+footer {
+    background-image: linear-gradient( to right, white, rgb(252, 61, 93), red );
+    height: 70px;
+    display: flex;
+}
+
+footer .informações {
+    margin-left: 600px;
+    color:black;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    list-style: none;
+    margin-top: 10px;
+}
+
