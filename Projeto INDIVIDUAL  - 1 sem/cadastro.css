@@ -8,6 +8,7 @@ header {
     display: flex;
 }
 
+
 header .referencias {
     margin-left: 600px;
     color:black;
@@ -28,54 +29,22 @@ header img {
 
 main {
    display: flex;
-   background-image:linear-gradient(rgb(252, 61, 93), red );
+   background-image: url(fundo2.jpg);
    background-repeat: no-repeat;
    background-size: cover;
    opacity: 0.7;
    height: 1000px;
 }
 
-main .banner {
-    background-color: white;
+main .fundo {
+    background-color: rgb(253, 29, 66);
     display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 63vh;
-    margin-top: 90px;
-    animation: slide 10s infinite;
-    animation-duration: alternate;
-    border-bottom: 5px solid rgb(255, 255, 255);
-    background-size: cover;
+    flex-direction: column;
+    width: 700px;
+    height: 500px;
+    align-content: center;
 }
 
-@keyframes slide {
-
-    0%,
-    30% {
-        background-image: url(img-site/banner-5.png);
-    }
-
-    35%,
-    65% {
-        background-image: url(img-site/banner-paint-2-canva.png);
-    }
-
-    70%,
-    100% {
-        background-image: url(img-site/covid_vacines_banner-canva.png);
-    }
-
-}
-
-
-
-main .noticias1 {
-    color:black;
-    height: 80px;
-    width: 50px;
-    font-size: 30px;
-    flex-direction: row;
-}
 
 footer {
     background-color: red;
