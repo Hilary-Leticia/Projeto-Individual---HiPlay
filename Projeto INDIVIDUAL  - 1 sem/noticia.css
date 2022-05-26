@@ -38,11 +38,10 @@ main {
 
 main .fundo {
     background-color: rgb(253, 29, 66);
-    display: flex;
     flex-direction: column;
     width: 70%;
     height: 1000px;
-    
+    margin-left: 200px;
 }
 
 p {
