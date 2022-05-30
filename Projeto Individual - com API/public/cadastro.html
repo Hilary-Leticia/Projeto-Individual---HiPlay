@@ -15,10 +15,10 @@
          <img src="imagens/HI - OFICIAL.png">
         </div>
         <ul class="referencias">
-         <li>Home</li> 
-         <li>Cadastro</li> 
-         <li>Sobre mim</li> 
-        </ul>
+            <li><a href="public/index.html">Home</a></li> 
+            <li><a href="public/cadastro.html">Cadastro</a></li> 
+            <li><a href="public/sobremim.html">Sobre mim</a></li> 
+           </ul>
     
     </header>
 
@@ -56,7 +56,7 @@
                  <option value="9"></option>
              </select>
 
-            <button onclick="votar()">Votar</button>
+            <button onclick="cadastrar()">Votar</button>
         </div>
         </div>
 
@@ -75,28 +75,56 @@
 </html>
 
 <script>
-   function concluir() {
-      var nome = i_nome.value
-      var idade = i_idade.value
-      var email = i_email.value
-      var senha = i_senha.value
-      var confSenha = i_confirmacao.value
+   
+   function cadastrar() {
+        aguardar();
 
-      if (nome == '' || idade == '' || email == '' || senha == '' || confSenha == '') {
-        alert('Preencha todos os campos!')
-      } else if(email.indexOf('@')) {
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = i_nome.value;
+        var idadeVar = i_idade.value
+        var emailVar = i_email.value;
+        var senhaVar = i_senha.value;
+        var confirmacaoSenhaVar = i_confirmacao.value;
+
+        if (nomeVar == "" ||idadeVar == '' || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        if(emailVar.indexOf('@')) {
         alert('Insira um email valido!')
-      }else if(senha == '' || confSenha == '' && senha != confSenha ) {
+        }
+        if(senhaVar == '' || confirmacaoSenhaVar == '' && senhaVar != confirmacaoSenhaVar ) {
         alert ('Senha e Confimação de Senha estão diferentes. Verifique!')
       }
-      
-      else{
-          div_votacao.style.display = 'block'
-      }
-   }
+            finalizarAguardar();
+            return false;
+        }
+
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                idadeServer: idadeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        })
+
+        div_votacao.style.display = 'block'
+    }
 
 
-   function votar() {
+    function votar() {
      var votacao = sel_votacao.value
 
      if(votacao == '') {
