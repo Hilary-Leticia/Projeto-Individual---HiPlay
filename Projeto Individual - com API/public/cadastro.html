@@ -1,109 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi Play</title>
+    <link rel="icon" href="./imagens/HI.logo(2).jpg" >
+    <title>Hi Play | Cadastro</title>
 
     <link rel="stylesheet" href="cadastro.css">
 </head>
+
 <body>
     <header>
         <div class="logo">
-         <!-- <video src="imagens/HI.mp4" type="video/mp4"></video> -->
-         <img src="imagens/HI - OFICIAL.png">
+            <!-- <video src="imagens/HI.mp4" type="video/mp4"></video> -->
+            <img src="imagens/HI - OFICIAL.png">
         </div>
         <ul class="referencias">
-            <li><a href="public/index.html">Home</a></li> 
-            <li><a href="public/cadastro.html">Cadastro</a></li> 
-            <li><a href="public/sobremim.html">Sobre mim</a></li> 
-           </ul>
-    
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="login.html">Login</a></li> 
+            <li><a href="sobremim.html">Sobre mim</a></li>
+        </ul>
+
     </header>
 
     <main>
-       
-    <div class="fundo"> 
-      <b>Cadastre - se</b>
-      <p>E receba novidades via email</p>
-    <div class="textoC">
-       Nome <input type="text" id="i_nome"> <br>
-       Idade <input type="text" id="i_idade"> <br>
-       Email <input type="text" id="i_email"> <br>
-       Senha <input type="text" id="i_senha"> <br>
-       Confirmar Senha <input type="text" id="i_confirmacao"> <br>
-       
-    <button onclick="concluir()">Concluir</button>
-    </div>
-    <br> <br>
 
-        <div class="votacao" id="div_votacao"  style="display: none;">
-        <b class="b.votacao"> Participe da nossa votação</b>
-        <p class="p.votacao">Escolha seu estilo de nmusica preferido!</p>
-        
+        <div class="fundo">
+            <b>Cadastre - se</b>
+            <p>E receba novidades via email</p>
+            <div class="textoC">
+                Nome <input type="text" id="i_nome"> <br>
+                Email <input type="text" id="i_email"> <br>
+                Senha <input type="password" id="i_senha"> <br>
+                Confirmar Senha <input type="password" id="i_confirmacao"> <br>
 
-        <div class="textoV">
-             <select name="" id="sel_votacao" >
-                 <option value="1">Pop</option>
-                 <option value="2">Rock</option>
-                 <option value="3">Jazz</option>
-                 <option value="4">R&B</option>
-                 <option value="5"></option>
-                 <option value="6"></option>
-                 <option value="7"></option>
-                 <option value="8"></option>
-                 <option value="9"></option>
-             </select>
-
-            <button onclick="cadastrar()">Votar</button>
+                <button class="botao" onclick="continuar()">Concluir</button>
+            </div>
         </div>
+        <br> <br>
+
+        <div class="caixa" id="div_votacao" style="display: none;">
+                <div class=" nomeVotacao"><b>Participe da nossa votação</b></div>
+        <div class="subVotacao">Escolha seu estilo de musica preferido!</div>
+        <br> <br>
+
+        <div class="textoV" style="height: 20px; width: 100px;">
+            <select name="" id="sel_votacao">
+                <option value="1">Pop</option>
+                <option value="2">Rock</option>
+                <option value="3">Rap</option>
+                <option value="4">R&B</option>
+                <option value="5">Sertanejo</option>
+                <option value="6">Eletrônica</option>
+                <option value="7">Funk</option>
+                <option value="8">Pagode/Samba</option>
+                <option value="9">K-pop</option>
+                <option value="10">Outros</option>
+            </select>
+            <br> <br>
+        </div>
+        <button class="botao1" onclick="cadastrar()">Votar</button>
         </div>
 
+<br>
     </main>
 
     <footer>
-<ul class="informações">
-    <li>Contato</li>
-    <li> Hilary Letícia
-       <br> SIS &copy; </li>
-    <li>Redes Sociais</li>
-</ul>
+        <ul class="informações">
+            <li>Feito por Hilary Letícia aluna do 1° semestre de Sistemas da Informação na SPTech School</li>
+            
+        </ul>
     </footer>
 
 </body>
+
 </html>
 
 <script>
-   
-   function cadastrar() {
-        aguardar();
+
+    function continuar() {
+
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = i_nome.value;
-        var idadeVar = i_idade.value
         var emailVar = i_email.value;
         var senhaVar = i_senha.value;
         var confirmacaoSenhaVar = i_confirmacao.value;
+        var fkvotacaoVar = sel_votacao.value;
 
-        if (nomeVar == "" ||idadeVar == '' || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        if(emailVar.indexOf('@')) {
-        alert('Insira um email valido!')
-        }
-        if(senhaVar == '' || confirmacaoSenhaVar == '' && senhaVar != confirmacaoSenhaVar ) {
-        alert ('Senha e Confimação de Senha estão diferentes. Verifique!')
-      }
-            finalizarAguardar();
-            return false;
+         /*if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+             alert ('Mensagem de erro para todos os campos em branco') 
+         if(emailVar.indexOf('@')) {
+         alert('Insira um email valido!')
+         }  
+         if (senhaVar == '' || confirmacaoSenhaVar == '' && senhaVar != confirmacaoSenhaVar ) {
+         alert ('Senha e Confimação de Senha estão diferentes. Verifique!')
+         }
+             finalizarAguardar();
+             return false;
+         } */
+
+
+        div_votacao.style.display = 'block'
+    }
+
+
+    function cadastrar() {
+        var nomeVar = i_nome.value;
+        var emailVar = i_email.value;
+        var senhaVar = i_senha.value;
+        var confirmacaoSenhaVar = i_confirmacao.value;
+        var fkvotacaoVar = sel_votacao.value;
+        
+
+        if (fkvotacaoVar == '') {
+            alert('É necessario votar para concluir seu cadastro!')
         }
 
         else {
-            setInterval(sumirMensagem, 5000)
+            alert('Cadastro Concluido!')
         }
 
+        
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -114,25 +136,12 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
-                idadeServer: idadeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                fkvotacaoServer: fkvotacaoVar
             })
         })
 
-        div_votacao.style.display = 'block'
+        window.location.href = "./login.html";
     }
-
-
-    function votar() {
-     var votacao = sel_votacao.value
-
-     if(votacao == '') {
-         alert('É necessario votar para concluir seu cadastro!')
-     }
-
-     else {
-         alert('Cadastro Concluido!') 
-     }
-   }
 </script>

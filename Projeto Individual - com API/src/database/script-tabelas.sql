@@ -2,76 +2,56 @@
 -- Você precisa executar os comandos no banco de dados para criar as tabelas,
 -- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 /* para workbench - local - desenvolvimento */
-CREATE DATABASE acquatec;
+create database HiPlay;
+use HiPlay;
 
-USE acquatec;
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+create table usuario (
+id int primary key auto_increment,
+nome varchar(50),
+email varchar(100),
+senha varchar(45),
+fkvotacao int,
+foreign key (fkvotacao) references Votacao (idvotacao)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-);
-
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300)
-);
-
-/* altere esta tabela de acordo com o que está em INSERT de sua API do arduino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
+insert into usuario values
+(null, 'kaique', 'kaique@sptech.school', '2904', 9),
+(null, 'hilary', 'hilary@sptech.school', '123', 1),
+(null, 'ezequiel', 'ezequiel@sptech.school', '0907', 6),
+(null, 'julia', 'julia@sptech.school', '1234ju', 10);
 
 
-/* para sql server - remoto - produção */
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
+create table votacao (
+idvotacao int primary key auto_increment,
+nomegenero varchar (20)
+); 
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-);
+insert into votacao values
+(null, 'Pop'),
+(null, 'Rock'),
+(null, 'Rap'),
+(null, 'R&B'),
+(null, 'Sertanejo'),
+(null, 'Eletrônica'),
+(null, 'Funk'),
+(null, 'Pagode/Samba'),
+(null, 'K-pop'),
+(null, 'Outros');
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY IDENTITY(1,1),
-	descricao VARCHAR(300)
-);
+select * from usuario;
+select * from votacao;
 
-/* altere esta tabela de acordo com o que está em INSERT de sua API do arduino */
+select id, nome, email, senha, fkvotacao, nomegenero from usuario, votacao where fkvotacao = idvotacao;
 
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT FOREIGN KEY REFERENCES aquario(id)
-);
+select nomegenero, count(fkvotacao) Qtd_de_Votos from usuario, votacao where fkvotacao = idvotacao group by fkvotacao;
+
+'Pop'
+'Rock'
+'Rap'
+'R&B'
+'Sertanejo'
+'Eletrônica'
+'Funk'
+'Pagode/Samba'
+'K-pop'
+'Outros'

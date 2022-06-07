@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi Play</title>
+    <link rel="icon" href="./imagens/HI.logo(2).jpg" >
+    <title>Hi Play | Home</title>
 
     <link rel="stylesheet" href="home.css">
 </head>
@@ -15,17 +16,18 @@
          <img src="imagens/HI - OFICIAL.png">
         </div>
         <ul class="referencias">
-         <li><a href="public/index.html">Home</a></li> 
-         <li><a href="public/cadastro.html">Cadastro</a></li> 
-         <li><a href="public/sobremim.html">Sobre mim</a></li> 
+         <li><a href="index.html">Home</a></li> 
+         <li><a href="cadastro.html">Cadastro</a></li> 
+         <li><a href="login.html">Login</a></li> 
+         <li><a href="sobremim.html">Sobre mim</a></li> 
         </ul>
     
     </header>
 
-    <main>
-       <div class="carrosel">
-       </div>
-
+    <main> 
+        
+       <div class="carrossel"> <img style="height: 400px; width: 1349px;" src="imagens/banner.png"></div>
+ <br> <br>
       <!-- <div class="banner">
            <div class="noticia1">Historia da Musica<button class="botão"
             onclick="noticia1()">Ver</button></div>
@@ -38,29 +40,31 @@
            
            <div class="Banner">
             <div class="conteinerBanner" id="move">
-            <div class="item"><img class="img" src="imagens/historia da musica.webp"> <button class="botão" onclick="">Ver</button> </div>
-            <div class="item"><img class="img" src="imagens/historia da musica.webp"> <button class="botão" onclick="">Ver</button> </div>
-            <div class="item"><img class="img" src="imagens/historia da musica.webp"> <button class="botão" onclick="">Ver</button> </div>
-            <div class="item"><img class="img" src="imagens/historia da musica.webp"> <button class="botão" onclick="">Ver</button> </div>
-            <div class="item"><img class="img" src="imagens/historia da musica.webp"> <button class="botão" onclick="">Ver</button> </div>
-            <div class="item"><img class="img" src="imagens/historia da musica.webp"> <button class="botão" onclick="">Ver</button> </div>
-            <div class="item"><img class="img" src="imagens/historia da musica.webp"> <button class="botão" onclick="">Ver</button> </div>
-            <div class="item"><img class="img" src="imagens/historia da musica.webp"> <button class="botão" onclick="">Ver</button> </div>
+            <div class="item" onclick="noticia()"> <img class="img" src="imagens/1.png"> </div>
+            <div class="item" onclick="noticia1()"><img class="img" src="imagens/2.png"> </div> 
+            <div class="item" onclick="noticia2()"><img class="img" src="imagens/3.png"> </div>
+            <div class="item" onclick="noticia3()"><img class="img" src="imagens/4.png"> </div>
+            <div class="item" onclick="noticia4()"><img class="img" src="imagens/5.png"> </div>
+            <div class="item" onclick="noticia5()"><img class="img" src="imagens/6.png"> </div>
+            <div class="item" onclick="noticia6()"><img class="img" src="imagens/7.png"> </div>
+            <div class="item" onclick="noticia7()"><img class="img" src="imagens/8.png"> </div>
             </div>
             <!-- controls -->
             <div class="cont">
-              <div class="esquerda controles" id="l"></div>
-              <div class="direita controles" id="r"></div>
+              <div class="esquerda controles" id="l"><div class="setE"></div></div>
+              <div class="direita controles" id="r"><div class="setD"></div></div>
             </div>
           </div>
+        
+        
+        <br> <br>
+        
     </main>
 
     <footer>
 <ul class="informações">
-    <li>Contato</li>
-    <li>Hilary Letícia
-       <br> SIS </li>
-    <li>Redes Sociais</li>
+    <li>Feito por Hilary Letícia aluna do 1° semestre de Sistemas da Informação na SPTech School</li>
+    
 </ul>
     </footer>
 
@@ -88,5 +92,39 @@
     	document.getElementById("move").style.marginLeft = x + "px";}
 	});
 
+    var paginas = ["./noticia.html", "./noticia1.html", "./noticia2.html", "./noticia3.html", "./noticia4.html", "./noticia5.html", "./noticia6.html", "./noticia7.html"]
+
+    function noticia() {
+        window.location.href = paginas[0]
+    }
+
+    function noticia1() {
+        window.location.href = paginas[1]
+    }
+
+    function noticia2() {
+        window.location.href = paginas[2]
+    }
+    
+    function noticia3() {
+        window.location.href = paginas[3]
+    }
+    
+    function noticia4() {
+        window.location.href = paginas[4]
+    }
+    
+    function noticia5() {
+        window.location.href = paginas[5]
+    }
+    
+    function noticia6() {
+        window.location.href = paginas[6]
+    }
+    
+    function noticia7() {
+        window.location.href = paginas[7]
+    }
+    
     
 </script>

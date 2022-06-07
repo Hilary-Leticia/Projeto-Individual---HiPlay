@@ -2,8 +2,19 @@ body {
     margin: 0px;
 }
 
+a{
+    color: black;
+    text-decoration: none;
+    transition: 0.5s;
+} 
+   
+a:hover {
+     transform: scale(1.1);
+     color: white;
+}
+
 header {
-    background-image: linear-gradient( to right, white, rgb(252, 61, 93), red );
+    background-image: linear-gradient( to right,white, rgb(252, 118, 158),rgb(245, 69, 122), rgb(252, 47, 108));
     height: 70px;
     display: flex;
 }
@@ -57,7 +68,7 @@ main .texto {
 }
 
 footer {
-    background-color: red;
+    background-image: linear-gradient(to top, white, rgb(252, 118, 158),rgb(245, 69, 122), rgb(252, 47, 108));
     height: 70px;
     display: flex;
 }

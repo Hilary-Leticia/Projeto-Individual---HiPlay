@@ -5,6 +5,12 @@ body {
   font-family: "Exo 2", sans-serif;
 }
 
+img {
+  margin-top: 100px;
+  width: 230px;
+  height: 100px;
+}
+
 .dash-right .avisos {
   width: 100%;
   /* border: 3px solid pink; */
@@ -80,7 +86,7 @@ body {
   padding: 20px;
 }
 
-.publicacao > *:not(:last-child) {
+.publicacao>*:not(:last-child) {
   padding: 0 0 10px 0;
 }
 
@@ -89,7 +95,7 @@ body {
 }
 
 .div-results .feed-container {
-  background-color: #212124;
+  background-color: #ffffff;
   border-radius: 5px;
   margin-bottom: 80px;
 }
@@ -99,14 +105,14 @@ body {
   justify-content: flex-end;
 }
 
-.div-buttons > * {
+.div-buttons>* {
   margin-left: 30px;
 }
 
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: white;
 }
 
 .dash {
@@ -114,7 +120,7 @@ body {
   position: relative;
   top: 0;
   left: 25%;
-  background-color: #161618;
+  background-color: white;
 
   /* width: 75%;
     display: flex;
@@ -179,7 +185,7 @@ body {
   text-align: center;
   height: 180px;
   justify-content: right;
-  background-color: #212124;
+  background-color: #eea3b5;
   font-size: 20px;
 }
 
@@ -193,7 +199,7 @@ body {
 .cards h1 {
   font-size: 22px;
   width: 100%;
-  border-bottom: solid white 1px;
+  border-bottom: solid rgb(0, 0, 0) 1px;
   text-align: left;
   font-weight: lighter;
   margin: 20px;
@@ -228,19 +234,56 @@ body {
 }
 
 .tituloGraficos {
-  color: rgb(216, 216, 216);
+  color: black;
   display: flex;
   justify-content: center;
 }
 
 .btn-chart {
   font-family: "Exo 2", sans-serif;
-  border: 0;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: #e6005a;
-  background-color: white;
-  margin: 5px;
-  border-radius: 3px;
+  margin-top: 20px;
+  height: 40px;
+  width: 100px;
+  font-size: 20px;
+  border-radius: 7px;
+  border-color: rgba(190, 188, 188, 0.932);
+  color: rgba(65, 64, 64, 0.932);
+  background-image: radial-gradient(white, rgb(252, 61, 93));
+}
+
+h3 {
+  color: rgba(65, 64, 64, 0.932);
+  justify-content: center;
+}
+
+
+.hello h3 {
+  color: black;
+  text-align: center;
+}
+
+.btn-logout .sair {
+  color: rgba(65, 64, 64, 0.932);
+  margin-top: -4px;
+}
+
+
+.btn-nav {
+  height: 30px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 7px;
+  border-color: rgba(190, 188, 188, 0.932);
+  background-image: radial-gradient(white, rgb(252, 61, 93));
+  text-align: center;
+}
+
+.btn-logout {
+  height: 20px;
+  width: 80px;
+  font-size: 20px;
+  border-radius: 7px;
+  border-color: rgba(190, 188, 188, 0.932);
+  color: rgba(65, 64, 64, 0.932);
+  background-image: radial-gradient(white, rgb(252, 61, 93));
 }
