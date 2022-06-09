@@ -18,7 +18,10 @@ insert into usuario values
 (null, 'kaique', 'kaique@sptech.school', '2904', 9),
 (null, 'hilary', 'hilary@sptech.school', '123', 1),
 (null, 'ezequiel', 'ezequiel@sptech.school', '0907', 6),
-(null, 'julia', 'julia@sptech.school', '1234ju', 10);
+(null, 'vitinho', 'vitinho@sptech.school', 'magodohtml', 2),
+(null, 'marco', 'marco@sptech.school', 'marcopolo', 3),
+(null, 'rafa', 'raf@sptech.school', 'rafabd', 2);
+
 
 
 create table votacao (

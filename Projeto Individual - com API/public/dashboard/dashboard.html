@@ -25,7 +25,7 @@
 <body onload="validarSessao(), atualizarFeed()">
 
     <div class="janela">
-        <div class="header-left" style="background-color: rgba(189, 185, 185, 0.87);">
+        <div class="header-left" style="background-color: rgb(250, 108, 151);">
             <img src="HI - OFICIAL.png">
 
             <div class="hello">
@@ -58,8 +58,8 @@
                     <span id="tituloAquario">Votação dos melhores gêneros de música</span>
                 </h3>
             </div>
-            <div class="graph">
-                <canvas id="canvas_grafico" style="background-color: rgb(198, 198, 243);"></canvas>
+            <div class="graph" id="grafico" style="display: none;">
+                <canvas id="canvas_grafico" style="background-color: white;"></canvas>
             </div>
         </div>
     </div>
@@ -70,10 +70,12 @@
 </html>
 
 <script>
+   // function obterDadosGrafico() {
+      
 
     let proximaAtualizacao;
-
-    window.onload = obterDadosGrafico(1);
+   
+    // window.onload = obterDadosGrafico(1);
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
@@ -96,18 +98,19 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
     var cores = [
-        '#FC46AA',
-        '#ff0000',
-        '#ffff00',
-        '#0000ff',
-        'rgb (255,182,193)',
-        'rgb (255,192,203)',
-        'rgb (240,128,128)',
-        'rgb (205,92,92)',
-        'rgb (220,20,60)',
+        '#C71585',
+        '#FF1493',
+        '#FF69B4',
+        '#DB7093',
+        '#FFB6C1',
+        '#F08080',
+        '#CD5C5C',
+        '#DC143C',
+        '#FFC0CB',
         '#FC46AA']
 
     function obterDadosGrafico(idAquario) {
+        grafico.style.display = 'block';
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);

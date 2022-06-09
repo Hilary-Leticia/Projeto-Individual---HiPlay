@@ -2,8 +2,19 @@ body {
     margin: 0px;
 }
 
+a{
+    color: black;
+    text-decoration: none;
+   
+} 
+   
+a:hover {
+     transform: scale(1.1);
+     color: white;
+}
+
 header {
-    background-image: linear-gradient( to right, white, rgb(252, 118, 158),rgb(245, 69, 122), rgb(252, 47, 108));
+    background-image: linear-gradient( to right, white, rgb(252, 61, 93), red );
     height: 70px;
     display: flex;
 }
@@ -29,19 +40,24 @@ header img {
 
 main {
    display: flex;
-   background-image: url(fundo2.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
+   background-image: url(./imagens/notas2.jpg);
    opacity: 0.7;
-   height: 1000px;
+   height: 2800px;
 }
 
 main .fundo {
-    background-color: rgb(253, 29, 66);
+    background-color: rgba(228, 48, 84, 0.781);
     flex-direction: column;
     width: 70%;
-    height: 1000px;
+    height: 2800px;
     margin-left: 200px;
+}
+
+.img_comeco {
+    width: 400px;
+    height: 300px;
+    margin-left: 270px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.76);
 }
 
 p {
@@ -51,9 +67,11 @@ p {
 }
 
 main .texto {
-    font-size: 30px;
-    text-align: center;
+    margin-top: -60px;
+    font-size: 17px;
     color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px;
 }
 
 footer {

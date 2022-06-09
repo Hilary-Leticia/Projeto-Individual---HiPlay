@@ -41,11 +41,9 @@ header img {
 main {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    background-repeat: no-repeat;
-    background-size: cover;
     opacity: 0.7;
     height: 517px;
+    background-image: url(./imagens/notas2.jpg);
 }
 
 .container {

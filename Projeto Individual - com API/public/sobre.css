@@ -40,18 +40,17 @@ header img {
 
 main {
    display: flex;
-   background-image: url(fundo2.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
    opacity: 0.7;
-   height: 1000px;
+   height: 3000px;
+   background-image: url(./imagens/notas2.jpg);
 }
 
 main .fundo {
     background-color: rgb(253, 29, 66);
+    display: flex;
     flex-direction: column;
     width: 70%;
-    height: 1000px;
+    height: 3000px;
     margin-left: 200px;
 }
 
@@ -61,10 +60,22 @@ p {
     color: black;
 }
 
-main .texto {
-    font-size: 30px;
+.texto {
+    font-size: 20px;
     text-align: center;
     color: black;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.primeira {
+    height: 500px;
+    width: 600px;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 170px;
 }
 
 footer {
